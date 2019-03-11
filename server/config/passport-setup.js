@@ -65,7 +65,7 @@ passport.use(
       //   console.log("where is ID?", profile);
       //check if user is already in our database
 
-      User.findOne({ googleId: profile.id }).then(userExsist => {
+      User.findOne({ instaId: profile.id }).then(userExsist => {
         if (userExsist) {
           console.log("user found", userExsist);
           done(null, userExsist);
@@ -100,7 +100,7 @@ passport.use(
       //   console.log("where is ID?", profile);
       //check if user is already in our database
 
-      User.findOne({ googleId: profile.id }).then(userExsist => {
+      User.findOne({ facebookId: profile.id }).then(userExsist => {
         if (userExsist) {
           console.log("user found", userExsist);
           done(null, userExsist);
