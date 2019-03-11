@@ -1,2 +1,2 @@
-# Siftz-Test
-Test for authentication 
+# SIFTZ
+SIFTZ is an application that is music connoisseur for user to provide songs list.
