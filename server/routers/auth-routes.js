@@ -41,8 +41,8 @@ router.get(
     }
   },
   (req, res) => {
-    res.redirect("https://shiftz-jp.herokuapp.com/mySiftz");
-    // res.redirect("http://localhost:3000/mySiftz"); //local
+    // res.redirect("https://shiftz-jp.herokuapp.com/mySiftz");
+    res.redirect("http://localhost:3000/mySiftz"); //local
     //res.send(req.user);
   }
 );
@@ -57,8 +57,8 @@ router.get(
     }
   },
   (req, res) => {
-    res.redirect("https://shiftz-jp.herokuapp.com/mySiftz");
-    // res.redirect("http://localhost:3000/mySiftz"); //local
+    // res.redirect("https://shiftz-jp.herokuapp.com/mySiftz");
+    res.redirect("http://localhost:3000/mySiftz"); //local
     //res.send(req.user);
   }
 );
@@ -74,8 +74,8 @@ router.get(
     }
   },
   (req, res) => {
-    res.redirect("https://shiftz-jp.herokuapp.com/mySiftz");
-    // res.redirect("http://localhost:3000/mySiftz"); //local
+    // res.redirect("https://shiftz-jp.herokuapp.com/mySiftz");
+    res.redirect("http://localhost:3000/mySiftz"); //local
     //res.send(req.user);
   }
 );
