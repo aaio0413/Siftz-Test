@@ -30,44 +30,44 @@ router.get(
 router.get("/instagram", passport.authenticate("instagram"));
 router.get("/facebook", passport.authenticate("facebook"));
 //auth callback from google
-router.get(
-  "/google/redirect",
-  passport.authenticate("google", {
-    failureRedirect: "/login"
-    // failureFlash: true,
-    // successRedirect: "http://localhost:3000/mySiftz"
-  }),
-  (err, req, res, next) => {
-    if (err.name === "TokenError") {
-      // res.redirect("https://shiftz-jp.herokuapp.com/login"); // for product
-      res.redirect("http://localhost:3000/login"); //for local
-    } else {
-    }
-  },
-  (req, res) => {
-    // res.redirect("https://shiftz-jp.herokuapp.com/mySiftz");
-    res.redirect("http://localhost:3000/mySiftz"); //local
-    //res.send(req.user);
-  }
-);
+// router.get(
+//   "/google/redirect",
+//   passport.authenticate("google", {
+//     failureRedirect: "/login"
+//     // failureFlash: true,
+//     // successRedirect: "http://localhost:3000/mySiftz"
+//   }),
+//   (err, req, res, next) => {
+//     if (err.name === "TokenError") {
+//       // res.redirect("https://shiftz-jp.herokuapp.com/login"); // for product
+//       res.redirect("http://localhost:3000/login"); //for local
+//     } else {
+//     }
+//   },
+//   (req, res) => {
+//     // res.redirect("https://shiftz-jp.herokuapp.com/mySiftz");
+//     res.redirect("http://localhost:3000/mySiftz"); //local
+//     //res.send(req.user);
+//   }
+// );
 
-// router.get("/google/redirect", function(req, res, next) {
-//   passport.authenticate("google", function(err, user, info) {
-//     if (err) {
-//       console.log(err);
-//       return next(err);
-//     }
-//     if (!user) {
-//       return res.redirect("/login");
-//     }
-//     req.logIn(user, function(err) {
-//       if (err) {
-//         return next(err);
-//       }
-//       return res.redirect("https://shiftz-jp.herokuapp.com/mySiftz");
-//     });
-//   })(req, res, next);
-// });
+router.get("/google/redirect", function(req, res, next) {
+  passport.authenticate("google", function(err, user, info) {
+    if (err) {
+      console.log(err);
+      return next(err);
+    }
+    if (!user) {
+      return res.redirect("/login");
+    }
+    req.logIn(user, function(err) {
+      if (err) {
+        return next(err);
+      }
+      return res.redirect("http://localhost:3000/mySiftz");
+    });
+  })(req, res, next);
+});
 
 router.get(
   "/instagram/redirect",
